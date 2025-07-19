@@ -1,0 +1,165 @@
+/* General Body Styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* Dark background as in the image */
+    color: #ffffff; /* White text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    background-color: #0d0d0d; /* Slightly darker header background */
+    padding: 10px 0;
+    border-bottom: 1px solid #333; /* Subtle border at the bottom of header */
+}
+
+.top-nav {
+    display: flex;
+    justify-content: center; /* THAY ĐỔI TỪ 'justify' thành 'center' */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* Có thể thêm màu nền để dễ nhìn hơn */
+    background-color: #1a1a1a; /* Ví dụ màu nền sẫm */
+}
+
+.top-nav .nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.top-nav .nav-item:hover {
+    color: #ff0000;
+}
+
+.top-nav .nav-item i {
+    margin-right: 5px;
+}
+
+
+/* Main Content Styles */
+main {
+    width: 100%;
+    max-width: 800px; /* Adjust max width as needed */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.hkq-logo {
+    width: 150px; /* Adjust logo size */
+    height: auto;
+}
+
+.main-heading {
+    font-size: 2.5em; /* Adjust font size for the main heading */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.red-text {
+    color: #ff0000; /* Red color for specific text parts */
+}
+
+.buy-tickets-button {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.red-button {
+    display: inline-flex; /* Use flex to align icon and text */
+    align-items: center;
+    background-color: #ff0000; /* Red button color */
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.red-button:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+.ticket-icon {
+    width: 24px; /* Size of the ticket icon */
+    height: 24px;
+    margin-right: 10px;
+    filter: brightness(0) invert(1); /* Make the icon white if it's black */
+}
+
+.main-navigation-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.nav-item-block {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    margin-bottom: 30px; /* Space between blocks */
+    padding: 15px 0;
+    width: 100%; /* Take full width of the main content area */
+    max-width: 300px; /* Limit width for each block */
+    background-color: #2b2b2b; /* Slightly lighter background for each block */
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item-block:hover {
+    background-color: #3d3d3d; /* Darker on hover */
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+.nav-item-block img {
+    width: 60px; /* Size of the icons */
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.nav-item-block .nav-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.nav-item-block .nav-subtext {
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+/* Footer Styles (optional) */
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: #aaaaaa;
+    font-size: 0.8em;
+    background-color: #0d0d0d;
+    margin-top: 50px;
+}

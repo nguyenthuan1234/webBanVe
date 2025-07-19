@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('Gemini_Generated_Image_gca954gca954gca9.png');
+    /* Thay đổi đường dẫn nếu bạn lưu ảnh cục bộ */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    /* Màu chữ tổng thể */
+    position: relative;
+    overflow: hidden;
+    /* Ngăn cuộn */
+}
+
+/* Lớp phủ mờ để dễ đọc chữ hơn */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Lớp phủ đen mờ */
+    z-index: 1;
+}
+
+.login-container {
+    position: relative;
+    z-index: 2;
+    /* Đảm bảo form nằm trên lớp phủ */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Nền form hơi trong suốt */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    /* Hiệu ứng làm mờ nền phía sau form */
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 2em;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #eee;
+    font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    border-color: #04a8f4;
+    /* Màu viền khi focus */
+}
+
+/* CSS cho phần "Ghi nhớ đăng nhập" */
+.remember-me {
+    display: flex;
+    /* Dùng flexbox để căn chỉnh checkbox và label */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    /* Căn sang trái */
+    padding-left: 5px;
+    /* Thêm padding để không quá sát mép */
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 10px;
+    /* Khoảng cách giữa checkbox và label */
+    accent-color: #30cc05;
+    /* Đổi màu checkbox (chỉ hỗ trợ trên một số trình duyệt) */
+    width: 16px;
+    /* Kích thước checkbox */
+    height: 16px;
+    cursor: pointer;
+}
+
+.remember-me label {
+    margin-bottom: 0;
+    /* Bỏ margin-bottom mặc định từ input-group label */
+    color: #eee;
+    font-weight: normal;
+    /* Đặt lại font-weight nếu cần */
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #e50914;
+    /* Màu đỏ đặc trưng của phim ảnh */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #9df309;
+}
+
+.signup-link {
+    margin-top: 25px;
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+.signup-link a {
+    color: #007bff;
+    /* Màu xanh cho liên kết đăng ký */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #f70d0d;
+}

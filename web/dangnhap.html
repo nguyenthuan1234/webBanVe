@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Đặt vé xem phim</title>
+    <link rel="stylesheet" href="dangnhap.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" action="/BanVe/php/login.php" method="POST">
+            <h2>Đăng nhập</h2>
+            <div class="input-group">
+                <label for="username">Tên người dùng / Email</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Ghi nhớ đăng nhập</label>
+            </div>
+            <button type="submit" name="btn_login">Đăng nhập</button>
+            <p class="signup-link">
+                Bạn Chưa có tài khoản? <a href="dangky.html">Đăng ký ngay</a> !
+            </p>
+        </form>
+    </div>
+</body>
+</html>

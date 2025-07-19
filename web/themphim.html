@@ -1,0 +1,39 @@
+<!-- /Banve/web/themphim.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm phim mới</title>
+</head>
+<body>
+<h2>Thêm phim mới</h2>
+<form id="addMovieForm" action="/Banve/php/movies.php" method="POST" enctype="multipart/form-data">
+  <label>Tiêu đề phim:</label>
+  <input type="text" name="title" required><br><br>
+
+  <label>Ảnh poster (upload):</label>
+  <input type="file" name="poster" accept="image/*" required><br><br>
+
+  <label>Ngày khởi chiếu:</label>
+  <input type="text" name="releaseDate" placeholder="yyyy-mm-dd hoặc TBA" required><br><br>
+
+  <label>Link trailer:</label>
+  <input type="text" name="trailerLink"><br><br>
+
+  <label>Giới hạn tuổi:</label>
+  <select name="age" required>
+    <option value="T13">T13</option>
+    <option value="T16">T16</option>
+    <option value="T18">T18</option>
+  </select><br><br>
+
+  <label>Định dạng:</label>
+  <select name="format" required>
+    <option value="2D">2D</option>
+    <option value="3D">3D</option>
+  </select><br><br>
+
+  <button type="submit">Thêm phim</button>
+</form>
+</body>
+</html>

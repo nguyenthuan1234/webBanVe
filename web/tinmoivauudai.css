@@ -1,0 +1,357 @@
+/* General Styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2; /* Nền sáng theo hình ảnh */
+    color: #333;
+    background-image: url('Gemini_Generated_Image_gca954gca954gca9.png');
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+header {
+    background-color: #000; /* Nền đen cho header */
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-bar {
+    display: flex; /* Biến đổi thanh menu thành một container flex */
+    justify-content: center; /* Căn giữa các mục con theo chiều ngang */
+    align-items: center; /* Căn giữa các mục con theo chiều dọc (nếu có chiều cao) */
+    background-color: #0b0101; /* Màu nền giống như trong hình ảnh */
+    padding: 10px 0; /* Đệm trên và dưới */
+    /* Nếu bạn muốn căn giữa cả khối menu-bar trên trang, bạn có thể thêm: */
+    width: 100%; /* Đảm bảo nó chiếm toàn bộ chiều rộng */
+}
+
+.menu-item {
+    color: #fff; /* Màu chữ trắng */
+    text-decoration: none; /* Bỏ gạch chân link */
+    padding: 0 15px; /* Đệm giữa các mục */
+    font-family: sans-serif; /* Chọn font chữ phù hợp */
+    font-size: 14px; /* Kích thước chữ */
+    text-transform: uppercase; /* Chữ hoa */
+}
+
+.top-nav .top-link,
+.language-switcher .lang-link {
+    margin-right: 15px;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.top-nav .top-link:last-child,
+.language-switcher .lang-link:last-child {
+    margin-right: 0;
+}
+
+.top-nav .top-link:hover,
+.language-switcher .lang-link:hover,
+.top-nav .top-link.active {
+    color: #fff;
+}
+
+.main-nav-bar {
+    background-color: #000;
+    padding: 15px 0;
+    border-bottom: 1px solid #333; /* Đường kẻ dưới nav chính */
+}
+
+.main-nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Điều chỉnh kích thước logo */
+}
+
+.main-nav .main-nav-item {
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav .main-nav-item:hover {
+    color: #e50914; /* Màu đỏ khi hover */
+}
+
+.buy-ticket-btn {
+    background-color: #e50914; /* Màu đỏ nút mua vé */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    transition: background-color 0.3s ease;
+}
+
+.buy-ticket-btn img {
+    height: 20px; /* Kích thước icon trong nút */
+}
+
+.buy-ticket-btn:hover {
+    background-color: #ff0000;
+}
+
+.sub-nav-bar {
+    background-color: #000;
+    padding: 15px 0;
+}
+
+.sub-nav-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Căn chỉnh các mục */
+    text-align: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+.sub-nav-item {
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    flex: 1; /* Để các item có độ rộng tương đối */
+    min-width: 120px; /* Đảm bảo không quá nhỏ */
+}
+
+.sub-nav-item img {
+    height: 40px; /* Kích thước icon */
+    margin-bottom: 5px;
+}
+
+.sub-nav-item span {
+    display: block;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.sub-nav-item p {
+    font-size: 0.75em;
+    margin: 0;
+}
+
+.sub-nav-item:hover,
+.sub-nav-item.active {
+    opacity: 1;
+    color: #e50914; /* Màu đỏ khi hover hoặc active */
+}
+
+/* Main Content Styles */
+main.container {
+    padding: 40px 0;
+}
+
+/* Changed .main-promotion-banner to .image-slider for clarity and added styling */
+.image-slider {
+    width: 100%; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed for your slider */
+    margin: 40px auto; /* Center the slider and provide some margin */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-size: cover; /* Ensures the background image covers the area */
+    background-position: center; /* Centers the background image */
+    animation: slider 20s linear infinite; /* Apply the animation */
+}
+
+@keyframes slider {
+    0% { background-image: url('Gemini_Generated_Image_gca954gca954gca9.png'); }
+    25% { background-image: url('nhung_bo_phim_hoat_hinh_gan_lien_voi_tuoi_tho_Doraemon_Chu_Meo_May_Den_Tu_Tuong_Lai_e2b492da7d.jpg'); }
+    50% { background-image: url('mqdefault.jpg'); }
+    75% { background-image: url('images.jpg'); }
+    100% { background-image: url('image023.jpg'); }
+}
+
+.news-offers-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e50914; /* Màu đỏ cho tiêu đề */
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.filter-options {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #e50914;
+    color: #fff;
+    border-color: #e50914;
+}
+
+.news-offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.news-offer-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Đảm bảo ảnh nằm trong bo tròn */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Đảm bảo nội dung xếp dọc */
+}
+
+.news-offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.news-offer-card img {
+    width: 100%;
+    height: 200px; /* Chiều cao cố định cho ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+}
+
+.news-offer-card .card-content {
+    padding: 20px;
+    flex-grow: 1; /* Cho phép nội dung giãn ra */
+    display: flex;
+    flex-direction: column;
+}
+
+.news-offer-card h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.3em;
+    line-height: 1.4;
+    min-height: 50px; /* Đảm bảo chiều cao tối thiểu cho tiêu đề */
+}
+
+.news-offer-card .date {
+    font-size: 0.85em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.news-offer-card .description {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Cho phép mô tả giãn ra */
+}
+
+.news-offer-card .read-more-btn {
+    display: inline-flex; /* Để icon và text cùng dòng */
+    align-items: center;
+    gap: 5px;
+    color: #e50914;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.news-offer-card .read-more-btn:hover {
+    color: #b3070f;
+}
+
+.read-more-btn i {
+    font-size: 0.8em;
+}
+
+.load-more-btn {
+    display: block;
+    margin: 40px auto 20px auto;
+    background-color: #e50914;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #ff0000;
+}
+
+/* Footer (Optional) */
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-bar-content,
+    .main-nav-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-nav, .language-switcher, .main-nav {
+        margin-bottom: 10px;
+    }
+
+    .main-nav .main-nav-item {
+        margin: 0 10px;
+    }
+
+    .sub-nav-content {
+        justify-content: center;
+    }
+
+    .news-offers-grid {
+        grid-template-columns: 1fr; /* Một cột trên màn hình nhỏ */
+    }
+
+    .news-offer-card h3 {
+        min-height: auto; /* Reset chiều cao tối thiểu */
+    }
+}
+
+@media (max-width: 480px) {
+    .buy-ticket-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        margin-bottom: 10px;
+        width: 80%; /* Nút lọc rộng hơn */
+    }
+}

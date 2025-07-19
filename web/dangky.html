@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Thành Viên HKQ</title>
+    <link rel="stylesheet" href="dangky.css">
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="signup-container">
+            <h2>ĐĂNG KÝ THÀNH VIÊN HKQ</h2>
+            <form action="/Banve/php/register.php" method="POST">
+                <div class="form-group">
+                    <label for="fullName">Họ và Tên</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên của bạn" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Địa chỉ email của bạn" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Số điện thoại di động" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" placeholder="Tạo mật khẩu" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Xác nhận Mật khẩu</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Nhập lại mật khẩu"
+                        required>
+                </div>
+                <button type="submit" class="signup-button">ĐĂNG KÝ NGAY</button>
+            </form>
+            <p class="login-link">Bạn đã có tài khoản? <a href="dangnhap.html">Đăng nhập tại đây</a></p>
+
+            <div class="social-signup">
+                <p>- HOẶC ĐĂNG KÝ VỚI -</p>
+                <div class="social-buttons">
+                    <button type="button" class="google">
+                        <img src="google_icon.png" alt="Google Icon"> Đăng ký với Google
+                    </button>
+                    <button type="button" class="facebook">
+                        <img src="facebook_icon.png" alt="Facebook Icon"> Đăng ký với Facebook
+                    </button>
+                    <ul class="horizontal-nav">
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <label for="user">user</label>
+            <input type="radio" id="user" name="terms" value="user" required>
+            <label for="admin">admin</label>
+            <input type="radio" id="admin" name="terms" value="admin">
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 HKQ Cinemas. All Rights Reserved.</p>
+        <p>Điều khoản sử dụng | Chính sách bảo mật | Liên hệ</p>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('Mật khẩu và xác nhận mật khẩu không khớp. Vui lòng nhập lại.');
+                event.preventDefault(); // Ngăn chặn gửi form
+            }
+        });
+    </script>
+</body>
+
+</html>

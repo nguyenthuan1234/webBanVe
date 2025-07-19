@@ -1,0 +1,227 @@
+ body {
+            font-family: 'Times New Roman', Times, serif; /* Sử dụng font tương tự trang web gốc */
+            background-color: #000; /* Nền đen tương tự trang web */
+            color: #fff; /* Chữ trắng */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('Gemini_Generated_Image_gca954gca954gca9.png'); /* Ảnh nền */
+        }
+        .horizontal-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .horizontal-nav li {
+    display: inline-block; /* Biến li thành inline-block */
+    margin-right: 20px; /* Tạo khoảng cách giữa các mục */
+  }
+
+  .horizontal-nav a {
+    color: rgb(255, 0, 0);
+    text-decoration: underline;
+  }
+  .horizontal-nav a:hover {
+    color: #0d00fd; /* Màu xanh nổi bật khi hover */
+}
+
+        .header {
+            /* Giữ nguyên header của trang web HKQ */
+            background-color: #0d0d0d;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .header img {
+            height: 40px; /* Kích thước logo */
+            vertical-align: middle;
+        }
+
+        .header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block; /* Để căn giữa */
+        }
+
+        .header nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
+        }
+
+        .buy-ticket-button {
+            background-color: #e50914; /* Màu đỏ nổi bật */
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 15px;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
+
+        }
+
+        .signup-container {
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .signup-container h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #e50914; /* Tiêu đề màu đỏ */
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            color: #ece6e6;
+        }
+
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #0e0303;
+            color: #fff;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #18cd11;
+        }
+
+        .form-group input::placeholder {
+            color: #eae2e2;
+        }
+
+        .signup-button {
+            width: 100%;
+            padding: 15px;
+            background-color: #e50914; /* Nút đăng ký màu đỏ */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+
+        .signup-button:hover {
+            background-color: #11e306;
+        }
+
+        .login-link {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        .login-link a {
+            color: #e50914;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration:  underline solid 2px;
+            color: #80ec0c;
+        }
+
+        .social-signup {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #222;
+        }
+
+        .social-signup p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .social-buttons button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 0.95em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-buttons button.google {
+            background-color: #DB4437; /* Google red */
+        }
+
+        .social-buttons button.facebook {
+            background-color: #4267B2; /* Facebook blue */
+        }
+
+        .social-buttons button:hover {
+            opacity: 0.9;
+        }
+
+        .social-buttons img {
+            height: 20px;
+            width: 20px;
+        }
+
+        .footer {
+            /* Giữ nguyên footer của trang web HKQ */
+            background-color: #0d0d0d;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            border-top: 1px solid #333;
+        }
