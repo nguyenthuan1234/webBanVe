@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('Gemini_Generated_Image_gca954gca954gca9.png');
+    background-image: url('../img/Gemini_Generated_Image_gca954gca954gca9.png');
     /* Thay đổi đường dẫn nếu bạn lưu ảnh cục bộ */
     background-size: cover;
     background-position: center;
@@ -150,4 +150,15 @@ button[type="submit"]:hover {
 
 .signup-link a:hover {
     color: #f70d0d;
+}
+
+.entertainment-link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.entertainment-link:hover {
+  color: yellow;
+  text-decoration: underline;
 }

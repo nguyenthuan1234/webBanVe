@@ -7,7 +7,8 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('Gemini_Generated_Image_gca954gca954gca9.png'); /* Ảnh nền */
+            background-image: url('../img/Gemini_Generated_Image_gca954gca954gca9.png');
+
         }
         .horizontal-nav {
     list-style: none;

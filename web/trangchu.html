@@ -26,8 +26,9 @@
 
             <div class="header-search">
                 <input type="text" placeholder="Tìm phim, rạp" />
-                <!-- Icon Search có thể thay bằng ảnh hoặc biểu tượng font-awesome -->
-                <img src="search-icon.png" alt="Search" class="search-icon" />
+                <button class="search-button" style="background: white; border: none;">
+                    <i class="fas fa-search" ></i>
+                </button>
             </div>
 
             <div class="header-right">
@@ -68,12 +69,12 @@
                 <div class="show-schedule">📍 Lịch chiếu</div>
             </div>
 
-            <div class="cinema-menu-left">
+            <d class="cinema-menu-left">
                 <a href="tinmoivauudai.html" class="menu-item">TIN MỚI & ƯU ĐÃI</a>
                 <!-- <i class="menu-item"><a href="tinmoivauudai.html"> TIN MỚI & ƯU ĐÃI</a></i> -->
                 <div>Thuê sự kiện</div>
                 <div>Tất cả các giải trí</div>
-                <div>Giới thiệu</div>
+                <a class="entertainment-link" href="gioithieu.html" >Giới thiệu</a>
             </div>
         </div>
     </div>
@@ -87,21 +88,39 @@
         </a>
     </div>
 
-
-
-
-
-
-
     <div class="movie-slider">
         <div class="movie-list" id="movieList"></div>
-        <div id="dots"></div>
-
-
         <div class="slider-nav">
             <button onclick="handlePrev()"><i class="fa fa-chevron-left"></i></button>
             <div class="dots" id="dots"></div>
             <button onclick="handleNext()"><i class="fa fa-chevron-right"></i></button>
+        </div>
+
+        <button class="load-more">Xem Thêm</button>
+    </div>
+
+
+    <h2 class="tieude1">Phim sắp chiếu</h2>
+    <div class="movie-slider">
+        <div class="movie-list" id="movieList1"></div>
+
+        <div class="slider-nav">
+            <button onclick="handlePrev1()"><i class="fa fa-chevron-left"></i></button>
+            <div class="dots" id="dots1"></div>
+            <button onclick="handleNext1()"><i class="fa fa-chevron-right"></i></button>
+        </div>
+
+        <button class="load-more">Xem Thêm</button>
+    </div>
+
+    <h2 class="tieude2">Phim nổi bật</h2>
+    <div class="movie-slider">
+        <div class="movie-list" id="movieList2"></div>
+
+        <div class="slider-nav">
+            <button onclick="handlePrev2()"><i class="fa fa-chevron-left"></i></button>
+            <div class="dots" id="dots2"></div>
+            <button onclick="handleNext2()"><i class="fa fa-chevron-right"></i></button>
         </div>
 
         <button class="load-more">Xem Thêm</button>

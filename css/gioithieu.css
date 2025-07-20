@@ -1,0 +1,547 @@
+/* --- Global & Body Styling --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Đảm bảo font được import */
+    background-color: #0b0f1a; /* Màu nền dự phòng */
+    /* Thiết lập hình ảnh nền động cho toàn bộ trang */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
+    color: white;  /* Màu chữ tổng thể cho nội dung */
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu để kích hoạt cuộn */
+    display: flex; /* Sử dụng flexbox để điều khiển bố cục chính */
+    flex-direction: column; /* Sắp xếp các phần theo cột */
+}
+
+/* --- Header Styling (Fixed at top) --- */
+.header-container {
+  margin-top: 0;
+  font-size: 25px;
+  background-color: #0B1320;
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  text-align: center;
+  z-index: 11;
+}
+
+
+
+.header-container .header-top {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px 0;
+  margin: 20px 10% 26px;
+  width: auto;
+}
+
+.header-container .header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-container .lg-react {
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header-container .logo {
+  height: 30px;
+}
+
+.header-container .btn-yellow {
+  background: linear-gradient(90deg, #FFEB3B 50%, #a34fe7 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  color: black;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-position 0.5s ease, color 0.5s ease;
+}
+
+.header-container .btn-yellow:hover {
+  background-position: right center;
+  color: white;
+}
+
+.header-container .btn-purple {
+  background: linear-gradient(90deg, #a34fe7 50%, #4CAF50 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-position 0.5s ease, color 0.5s ease;
+}
+
+.header-container .btn-purple:hover {
+  background-position: right center;
+  color: black;
+}
+
+.header-container .header-search {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin-left: 185px;
+  width: 300px;
+}
+
+.header-container .header-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 4px;
+  font-size: 14px;
+  color: black;
+}
+
+.header-container .header-search .search-icon {
+  
+  color: #999;
+}
+
+.header-container .header-right {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+.header-container .login {
+  text-decoration: none;
+  color: white;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header-container .login:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+.header-container .language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.header-container .language .star {
+  color: red;
+  font-size: 18px;
+}
+
+.header-container .language .vn {
+  transition: color 0.3s ease;
+}
+
+.header-container .language .vn:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header-container .header-bottom {
+  max-width: 90%;
+  display: flex;
+  gap: 30px;
+  padding: 10px 40px;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container .ci-sh {
+  width: 20%;
+  margin-left: 10%;
+  gap: 20px;
+  display: flex;
+}
+
+.header-container .show-schedule {
+  color: white;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.header-container .show-schedule:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+.cinema-menu-left {
+  margin-right: 10%;
+  gap: 33px;
+  display: flex;
+}
+
+.cinema-menu-left div {
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.cinema-menu-left div:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+/* --- Main Content Wrapper --- */
+/* Thêm khoảng trống ở đầu trang để nội dung không bị header cố định che mất */
+.main-content-wrapper {
+    margin-top: 110px; /* Điều chỉnh giá trị này bằng chiều cao của header + một chút */
+    flex-grow: 1; /* Cho phép nó giãn nở để chiếm không gian còn lại */
+    position: relative; /* Giữ ngữ cảnh định vị */
+}
+
+
+/* --- Header Background (for the image and top line) --- */
+.header-background {
+    width: 100%;
+    height: 300px; /* Điều chỉnh chiều cao phù hợp với ảnh nền */
+    /* Ảnh nền đã được đặt ở body, nên không cần đặt lại ở đây */
+    /* background-image: url('image_0c8ba2.png'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    position: relative;
+    padding-top: 20px;
+    box-sizing: border-box;
+    /* backdrop-filter: blur(5px); */ /* Nếu bạn muốn làm mờ ảnh nền phía sau nội dung */
+}
+
+.top-line {
+    width: 90%;
+    max-width: 1000px;
+    height: 2px;
+    background-color: #a0e6a0; /* Màu xanh nhạt của đường kẻ */
+    margin: 0 auto;
+    position: absolute;
+    top: 50px; /* Điều chỉnh vị trí đường kẻ từ trên xuống so với .header-background */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- Content Container --- */
+.content-container {
+
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 900px;
+    margin: -100px auto 50px auto; /* Đẩy container lên và căn giữa, thêm margin-bottom để footer không bị dính */
+    position: relative;
+    z-index: 10;
+}
+
+.main-title {
+     font-size: 2.8em;
+    color: white; /* Đổi màu chữ tiêu đề */
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.intro-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ddd;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 2em;
+    color: white;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* --- Timeline Styling --- */
+.development-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.development-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    z-index: 1;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #28a745;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    z-index: 3;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.3);
+}
+
+.year {
+    flex: 0 0 45%;
+    font-size: 1.6em;
+    color: #333;
+    font-weight: 700;
+    text-align: right;
+    padding-right: 30px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) .year {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 0;
+}
+
+.description {
+color: #e0e0e0; /* Chữ trắng nhạt */
+    background-color: rgba(255, 255, 255, 0.05); /* Nền trong suốt sáng nhẹ */
+}
+
+.timeline-item:nth-child(odd) .description {
+    text-align: left;
+}
+
+.timeline-item:nth-child(even) .description {
+    text-align: left;
+}
+
+/* --- Call to action section --- */
+.call-to-action {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.call-to-action h3 {
+    color: white; 
+}
+
+.action-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.action-button.secondary {
+    background-color: #6c757d;
+}
+
+.action-button.secondary:hover {
+    background-color: #5a6268;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .header-container .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+    .header-container .header-left,
+    .header-container .header-right,
+    .header-container .header-search {
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+    .header-container .header-search input {
+        width: calc(100% - 40px);
+    }
+    .header-container hr {
+        margin: 0 20px;
+    }
+
+    .main-content-wrapper {
+        margin-top: 200px; /* Điều chỉnh margin-top cho mobile nếu header lớn hơn */
+    }
+
+    .header-background {
+        height: 200px;
+    }
+    .top-line {
+        top: 30px;
+    }
+    .content-container {
+        padding: 20px;
+        max-width: 95%;
+    }
+    .main-title {
+        font-size: 2.2em;
+    }
+    .intro-text {
+        font-size: 1em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    .development-timeline::before {
+        left: 20px;
+        transform: none;
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        padding-left: 40px;
+    }
+    .timeline-item::before {
+        left: 20px;
+        transform: none;
+    }
+    .year {
+        text-align: left !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 10px;
+        font-size: 1.4em;
+    }
+    .description {
+        text-align: left;
+        flex: 1 1 100%;
+        padding: 15px;
+    }
+    .action-button {
+        display: block;
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container .header-top {
+        padding: 8px 10px;
+    }
+    .header-container .btn-yellow, .header-container .btn-purple {
+        padding: 6px 10px;
+        font-size: 0.9em;
+    }
+    .header-container .header-search {
+        width: calc(100% - 20px);
+        margin: 5px 0;
+    }
+    .header-container .header-search input {
+        font-size: 12px;
+    }
+    .header-container .header-right a, .header-container .language {
+        font-size: 12px;
+    }
+
+    .main-content-wrapper {
+        margin-top: 180px; /* Điều chỉnh margin-top thêm cho màn hình nhỏ hơn */
+    }
+
+    .header-background {
+        height: 150px;
+    }
+    .top-line {
+        top: 30px;
+        width: 85%;
+    }
+    .content-container {
+        margin: -70px auto 20px auto;
+        padding: 15px;
+    }
+    .main-title {
+        font-size: 1.8em;
+    }
+    .intro-text {
+        font-size: 0.9em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .year {
+        font-size: 1.2em;
+    }
+    .description {
+        font-size: 0.9em;
+        padding: 12px;
+    }
+}
+hr {
+    color: white;
+    margin-left: 9%;
+    width: 80.5%;
+}

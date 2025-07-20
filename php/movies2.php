@@ -6,7 +6,9 @@ require_once 'connect.php'; // Kết nối $conn
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     header('Content-Type: application/json; charset=utf-8');
 
-     $sql = "SELECT * FROM movies WHERE phim_type = 'phim1' AND is_active = 1 ORDER BY release_date DESC";
+   // lấy các phim type là 'phim3'
+    $sql = "SELECT * FROM movies WHERE phim_type = 'phim3' AND is_active = 1 ORDER BY release_date DESC";
+
     $result = $conn->query($sql);
 
     $movies = [];
