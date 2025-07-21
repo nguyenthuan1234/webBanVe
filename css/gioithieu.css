@@ -545,3 +545,8 @@ hr {
     margin-left: 9%;
     width: 80.5%;
 }
+
+button.search-button {
+    background: white;
+    border: none;
+}

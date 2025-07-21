@@ -60,7 +60,10 @@ function renderMovies(role = "user") {
           <a href="${movie.trailerLink}" class="trailer-btn">
             <i class="fa fa-play-circle"></i> Xem Trailer
           </a>
-          <button class="book-btn">Đặt Vé</button>
+         <a class="book-btn" href="/Banve/php/booking.php?id=${movie.id}&title=${encodeURIComponent(movie.title)}&duration=${movie.time}&date=${encodeURIComponent(movie.release_date)}&format=${movie.format}">
+             Đặt Vé
+          </a>
+
           ${isAdmin ? `
               <button class="trailer-btn" onclick="editMovie(${movie.id})">Sửa</button>
               <button class="book-btn" onclick="handleDelete(${movie.id})">Xóa</button>
@@ -195,7 +198,7 @@ function renderMovies1(role = "user") {
         <button class="book-btn">Đặt Vé</button>
         ${role === "admin" ? `
           <button class="trailer-btn" onclick="editMovie(${movie.id})">Sửa</button>
-          <button class="book-btn" onclick="handleDelete(${movie.id})">Xóa</button>
+          <button class="book-btn" onclick="handleDelete1(${movie.id})">Xóa</button>
         ` : ""}
         
       </div>
@@ -224,12 +227,30 @@ function renderMovies2(role = "user") {
         <button class="book-btn">Đặt Vé</button>
         ${role === "admin" ? `
           <button class="trailer-btn" onclick="editMovie(${movie.id})">Sửa</button>
-          <button class="book-btn" onclick="handleDelete(${movie.id})">Xóa</button>
+          <button class="book-btn" onclick="handleDelete1(${movie.id})">Xóa</button>
         ` : ""}
       </div>
     </div>`).join("");
   renderDots2();
 }
+
+function handleDelete1(id) {
+  if (!confirm("Bạn có chắc muốn xóa phim này không?")) return;
+
+  fetch(`/Banve/php/delete.php?this_id=${id}`, {
+    method: 'GET',
+    credentials: 'include'
+  })
+    .then(msg => {
+      fetchMovies(); // Load lại danh sách sau khi xóa
+    })
+    .catch(err => {
+      console.error("Lỗi khi xóa phim:", err);
+    });
+}
+
+
+
 
 function renderDots1() {
   const dotsContainer = document.getElementById("dots1");

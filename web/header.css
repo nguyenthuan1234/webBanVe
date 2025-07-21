@@ -327,7 +327,18 @@ hr {
   flex: 0 0 auto;
   min-height: 550px;
   justify-content: space-between;
+
+  /* Thêm hiệu ứng mượt */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
+
+.movie-slider .movie-item:hover {
+  transform: scale(1.05); /* Phóng to khi hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Bóng đổ khi hover */
+  z-index: 2;
+}
+
 
 .movie-slider .movie-item .poster {
   position: relative;

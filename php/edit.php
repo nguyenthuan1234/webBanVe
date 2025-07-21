@@ -8,6 +8,7 @@ if (isset($_POST['update'])) {
     $trailer_link = $_POST['trailer_link'];
     $age = $_POST['age'];
     $format = $_POST['format'];
+    $time = $_POST['time'];
 
     // Xử lý ảnh poster
     if (isset($_FILES['poster']) && $_FILES['poster']['error'] === UPLOAD_ERR_OK) {
@@ -29,12 +30,12 @@ if (isset($_POST['update'])) {
             die("Lỗi upload ảnh!");
         }
     } else {
-        $posterPath = $_POST['old_poster']; // Dùng ảnh cũ nếu không upload mới
+        $posterPath = $_POST['old_poster'];
     }
 
-    // Cập nhật phim
-    $stmt = $conn->prepare("UPDATE movies SET title=?, poster=?, release_date=?, trailer_link=?, age=?, format=? WHERE id=?");
-    $stmt->bind_param("ssssssi", $title, $posterPath, $release_date, $trailer_link, $age, $format, $id);
+    // Cập nhật phim (đã thêm trường time)
+    $stmt = $conn->prepare("UPDATE movies SET title=?, poster=?, release_date=?, trailer_link=?, age=?, format=?, time=? WHERE id=?");
+    $stmt->bind_param("sssssssi", $title, $posterPath, $release_date, $trailer_link, $age, $format, $time, $id);
 
     if ($stmt->execute()) {
         $stmt->close();
@@ -54,7 +55,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <!-- Giao diện form -->
-<form action="edit.php" method="post" enctype="multipart/form-data">
+<form action="/Banve/php/edit.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 
     <p>Tiêu đề phim:</p>
@@ -76,6 +77,9 @@ if (isset($_GET['id'])) {
 
     <p>Định dạng:</p>
     <input type="text" name="format" value="<?php echo $row['format']; ?>">
+
+    <p>Thời lượng (phút):</p>
+    <input type="text" name="time" value="<?php echo $row['time']; ?>">
 
     <br><br>
     <button type="submit" name="update">Cập nhật</button>

@@ -6,7 +6,7 @@ require_once 'connect.php'; // Kết nối $conn
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     header('Content-Type: application/json; charset=utf-8');
 
-     $sql = "SELECT * FROM movies WHERE phim_type = 'phim1' AND is_active = 1 ORDER BY release_date DESC";
+    $sql = "SELECT * FROM movies WHERE phim_type = 'phim1' AND is_active = 1 ORDER BY release_date DESC";
     $result = $conn->query($sql);
 
     $movies = [];
@@ -24,11 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     echo json_encode([
         'movies' => $movies,
         'role' => $role,
-        'logged_in' => isset($_SESSION['username']) // ✅ thêm dòng này để JS biết có login không
+        'logged_in' => $loggedIn
     ]);
     exit;
 }
-
 
 // 👉 XỬ LÝ POST: Thêm phim mới từ form
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -37,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $trailerLink = $_POST['trailerLink'] ?? '';
     $age = $_POST['age'] ?? '';
     $format = $_POST['format'] ?? '';
+    $time = $_POST['time'] ?? '';
     $posterPath = "";
     $isActive = 1;
     $phimType = $_POST['phim'] ?? 'phim1';
@@ -64,9 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Chưa chọn ảnh hoặc ảnh lỗi!");
     }
 
-    // Thêm vào CSDL
-    $stmt = $conn->prepare("INSERT INTO movies (title, poster, release_date, trailer_link, age, format, is_active, phim_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssis", $title, $posterPath, $releaseDate, $trailerLink, $age, $format, $isActive, $phimType);
+    // ✅ Thêm time vào câu lệnh SQL
+    $stmt = $conn->prepare("INSERT INTO movies (title, poster, release_date, trailer_link, age, format, time, is_active, phim_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssis", $title, $posterPath, $releaseDate, $trailerLink, $age, $format, $time, $isActive, $phimType);
 
     if ($stmt->execute()) {
         $stmt->close();
@@ -80,5 +80,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
-
