@@ -195,7 +195,9 @@ function renderMovies1(role = "user") {
       </div>
       <div class="buttons">
         <a href="${movie.trailerLink}" class="trailer-btn"><i class="fa fa-play-circle"></i> Xem Trailer</a>
-        <button class="book-btn">Đặt Vé</button>
+        <a class="book-btn" href="/Banve/php/booking.php?id=${movie.id}&title=${encodeURIComponent(movie.title)}&duration=${movie.time}&date=${encodeURIComponent(movie.release_date)}&format=${movie.format}">
+             Đặt Vé
+          </a>
         ${role === "admin" ? `
           <button class="trailer-btn" onclick="editMovie(${movie.id})">Sửa</button>
           <button class="book-btn" onclick="handleDelete1(${movie.id})">Xóa</button>
@@ -224,7 +226,9 @@ function renderMovies2(role = "user") {
       </div>
       <div class="buttons">
         <a href="${movie.trailerLink}" class="trailer-btn"><i class="fa fa-play-circle"></i> Xem Trailer</a>
-        <button class="book-btn">Đặt Vé</button>
+        <a class="book-btn" href="/Banve/php/booking.php?id=${movie.id}&title=${encodeURIComponent(movie.title)}&duration=${movie.time}&date=${encodeURIComponent(movie.release_date)}&format=${movie.format}">
+             Đặt Vé
+          </a>
         ${role === "admin" ? `
           <button class="trailer-btn" onclick="editMovie(${movie.id})">Sửa</button>
           <button class="book-btn" onclick="handleDelete1(${movie.id})">Xóa</button>

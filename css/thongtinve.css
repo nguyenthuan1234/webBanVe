@@ -1,130 +1,19 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #0f172a; /* Nền tối */
-    color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #0B1320;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-form {
-    max-width: 850px;
-    margin: 8% auto;
-    background-color: #1e293b;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-h2, h3 {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #e2e8f0;
-}
-
-select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 8px;
-    border-radius: 8px;
-    border: none;
-    background-color: #334155;
-    color: #ffffff;
-    font-size: 16px;
-}
-
-/* ==== Ghế ==== */
-.seat-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.seat-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.seat {
-    width: 40px;
-    height: 40px;
-    margin: 6px;
-    background-color: #475569; /* Ghế trống */
-    text-align: center;
-    line-height: 40px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
-    color: white;
-    font-weight: bold;
-}
-
-.seat:hover {
-    background-color: #64748b;
-    transform: scale(1.05);
-}
-
-.seat.selected {
-    background-color: #9333ea; /* Ghế được chọn */
-}
-
-.seat.occupied {
-    background-color: #334155;
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-/* ==== Nút và tổng tiền ==== */
-button[type="submit"] {
-  width: 100%;
-  background: linear-gradient(90deg, #FFEB3B 50%, #a34fe7 50%);
-  background-size: 200% 100%;
-  background-position: left center;
-  color: black;
-  font-weight: bold;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-position 0.5s ease, color 0.5s ease;
-}
-
-button[type="submit"]:hover {
-    background-position: right center;
-    color: white;
-}
-
-#totalAmountDisplay {
-    font-weight: bold;
-    color: #facc15;
-    font-size: 20px;
-}
-
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif; /* Đảm bảo font được import */
-    background-color: #0B1320; /* Màu nền dự phòng */
-    /* Thiết lập hình ảnh nền động cho toàn bộ trang */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn */
-    color: white;  /* Màu chữ tổng thể cho nội dung */
-    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu để kích hoạt cuộn */
-    display: flex; /* Sử dụng flexbox để điều khiển bố cục chính */
-    flex-direction: column; /* Sắp xếp các phần theo cột */
-}
-
+/* ========== HEADER ========== */
 .header-container {
   margin-top: 0;
   font-size: 25px;
@@ -139,8 +28,6 @@ body {
   text-align: center;
   z-index: 11;
 }
-
-
 
 .header-container .header-top {
   font-size: 15px;
@@ -166,12 +53,8 @@ body {
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 .header-container .logo {
@@ -234,7 +117,6 @@ body {
 }
 
 .header-container .header-search .search-icon {
-  
   color: #999;
 }
 
@@ -247,7 +129,6 @@ body {
 .header-container .login {
   text-decoration: none;
   color: white;
-  margin-top: 0;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -272,14 +153,9 @@ body {
   font-size: 18px;
 }
 
-.header-container .language .vn {
-  transition: color 0.3s ease;
-}
-
 .header-container .language .vn:hover {
   color: #FFEB3B;
   text-decoration: underline;
-  cursor: pointer;
 }
 
 .header-container .header-bottom {
@@ -311,6 +187,7 @@ body {
   text-decoration: underline;
 }
 
+/* ========== MENU CHUNG ========== */
 .cinema-menu-left {
   margin-right: 10%;
   gap: 33px;
@@ -327,11 +204,6 @@ body {
   text-decoration: underline;
 }
 
-hr {
-    margin-left: 9%;
-    width: 80.5%;
-}
-
 .cinema-dropdown {
   gap: 20px;
   position: relative;
@@ -342,7 +214,6 @@ hr {
 .cinema-dropdown .cinema-title {
   color: white;
   cursor: pointer;
-  padding: 0;
   transition: color 0.3s ease;
 }
 
@@ -382,14 +253,14 @@ hr {
   gap: 10px 40px;
 }
 
+/* ========== MENU ITEM ========== */
 .menu-item {
-  color: white; /* màu chữ ban đầu */
-  text-decoration: none; /* bỏ gạch chân mặc định */
+  color: white;
+  text-decoration: none;
   font-weight: normal;
   transition: all 0.3s ease;
   font-size: 13px;
 }
-
 
 .menu-item:hover {
   color: #FFEB3B;
@@ -398,13 +269,13 @@ hr {
 }
 
 .menu-item a {
-  font-family: Arial, sans-serif; /* hoặc Roboto, Helvetica, tránh dùng font nghệ thuật */
+  font-family: Arial, sans-serif;
   font-style: normal;
-  font-weight: 500; /* hoặc 400 */
+  font-weight: 500;
   text-decoration: none;
-  color: white; /* màu chữ ban đầu */
-  transition: all 0.3s ease;
+  color: white;
   font-size: 13px;
+  transition: all 0.3s ease;
 }
 
 .menu-item a:hover {
@@ -412,35 +283,7 @@ hr {
   text-decoration: underline;
 }
 
-img.img_booking {
-    height: 100%;
-    display: list-item;
-    width: 97%;
-}
-
-form.cangchinh {
-    margin-top: 13%;
-    display: flex;
-}
-
-.header-container .btn-yellow {
-  background: linear-gradient(90deg, #FFEB3B 50%, #a34fe7 50%);
-  background-size: 200% 100%;
-  background-position: left center;
-  color: black;
-  font-weight: bold;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-position 0.5s ease, color 0.5s ease;
-}
-
-.header-container .btn-yellow:hover {
-  background-position: right center;
-  color: white;
-}
-
+/* ========== GIẢI TRÍ LINK ========== */
 .entertainment-link {
   color: white;
   text-decoration: none;
@@ -450,4 +293,59 @@ form.cangchinh {
 .entertainment-link:hover {
   color: yellow;
   text-decoration: underline;
+}
+
+/* ========== NỘI DUNG VÉ ========== */
+.ticket-info {
+  text-align: center;
+  display: flex;
+  background-color: #111827;
+  padding: 2rem;
+  margin: 15% ;
+  margin-top: 13%;
+  border-radius: 12px;
+  max-width: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.ticket-info {
+    margin-left: 23%;
+
+    display: flex;
+    background-color: #111827;
+    padding: 2rem;
+    margin-top: 13%;
+    border-radius: 12px;
+    max-width: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+
+
+hr {
+  margin-left: 9%;
+  width: 80.5%;
+}
+.img_poster{
+    height: 100%;
+    display: list-item;
+    width: 70%;
+}
+
+img.img_booking {
+    margin-top: -4%;
+    height: 95%;
+    display: list-item;
+    width: 75%;
+}
+
+form.ticket-info{
+    margin-top: 13%;
+    
+}
+.tieude {
+    text-align: center;
+    font-size: 125%;
+    color: #609efa;
+    margin-bottom: 1rem;
 }

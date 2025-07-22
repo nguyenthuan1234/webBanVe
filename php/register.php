@@ -8,6 +8,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $role = 'user'; // Mặc định là user
 
 
         // Truy vấn để kiểm tra xem email đã tồn tại chưa
@@ -30,7 +31,7 @@
         }
         else {
             // Thêm thành viên mới
-            $insertQuery = "INSERT INTO thanhvien (fullName, Email, Password) VALUES ('$fullName', '$email', '$hashedPassword')";
+            $insertQuery = "INSERT INTO thanhvien (fullName, Email, Password,role) VALUES ('$fullName', '$email', '$hashedPassword', '$role')";
             if (mysqli_query($conn, $insertQuery)) {
                 echo "Đăng ký thành công!";
                 $_SESSION['username'] = $email; // Đăng nhập ngay sau khi đăng ký

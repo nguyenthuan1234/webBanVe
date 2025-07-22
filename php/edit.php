@@ -54,33 +54,48 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<!-- Giao diện form -->
-<form action="/Banve/php/edit.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Banve/css/edit.css">
+</head>
+<body>
+    <!-- Giao diện form -->
+<div class="form-container">
+  <form action="/Banve/php/edit.php" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 
-    <p>Tiêu đề phim:</p>
-    <input type="text" name="title" value="<?php echo $row['title']; ?>">
+      <p>Tiêu đề phim:</p>
+      <input type="text" name="title" value="<?php echo $row['title']; ?>">
 
-    <p>Poster (ảnh):</p>
-    <input type="file" name="poster"><br>
-    <img src="<?php echo $row['poster']; ?>" width="80" height="80">
-    <input type="hidden" name="old_poster" value="<?php echo $row['poster']; ?>">
+      <p>Poster (ảnh):</p>
+      <input type="file" name="poster"><br>
+      <img src="<?php echo $row['poster']; ?>" width="80" height="80">
+      <input type="hidden" name="old_poster" value="<?php echo $row['poster']; ?>">
 
-    <p>Ngày phát hành:</p>
-    <input type="date" name="release_date" value="<?php echo $row['release_date']; ?>">
+      <p>Ngày phát hành:</p>
+      <input type="date" name="release_date" value="<?php echo $row['release_date']; ?>">
 
-    <p>Link trailer:</p>
-    <input type="text" name="trailer_link" value="<?php echo $row['trailer_link']; ?>">
+      <p>Link trailer:</p>
+      <input type="text" name="trailer_link" value="<?php echo $row['trailer_link']; ?>">
 
-    <p>Độ tuổi:</p>
-    <input type="text" name="age" value="<?php echo $row['age']; ?>">
+      <p>Độ tuổi:</p>
+      <input type="text" name="age" value="<?php echo $row['age']; ?>">
 
-    <p>Định dạng:</p>
-    <input type="text" name="format" value="<?php echo $row['format']; ?>">
+      <p>Định dạng:</p>
+      <input type="text" name="format" value="<?php echo $row['format']; ?>">
 
-    <p>Thời lượng (phút):</p>
-    <input type="text" name="time" value="<?php echo $row['time']; ?>">
+      <p>Thời lượng (phút):</p>
+      <input type="text" name="time" value="<?php echo $row['time']; ?>">
 
-    <br><br>
-    <button type="submit" name="update">Cập nhật</button>
-</form>
+      <br>
+      <button type="submit" name="update">Cập nhật</button>
+  </form>
+</div>
+
+    
+</body>
+</html>

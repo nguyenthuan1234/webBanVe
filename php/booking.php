@@ -31,6 +31,9 @@ $user = $stmt_user->get_result()->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/Banve/css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
 </head>
 <body>
 
@@ -52,15 +55,15 @@ $user = $stmt_user->get_result()->fetch_assoc();
                 </button>
             </div>
 
-            <div class="header-right">
+           <div class="header-right">
                 <div class="login">
                     <div class="menu-item">
-                        <!-- JS sẽ chèn nội dung Đăng nhập / Đăng xuất ở đây -->
                         <a href="/Banve/web/dangnhap.html">
-                            <i class="fas fa-user" id="loginMenu"></i> Đăng nhập
+                            <i class="fas fa-user"></i> Đăng nhập
                         </a>
                     </div>
                 </div>
+
                 <div class="language">
                     <span class="star">★</span>
                     <span class="vn">VN ▾</span>
@@ -90,8 +93,8 @@ $user = $stmt_user->get_result()->fetch_assoc();
                 <div class="show-schedule">📍 Lịch chiếu</div>
             </div>
 
-            <d class="cinema-menu-left">
-                <a href="tinmoivauudai.html" class="menu-item">TIN MỚI & ƯU ĐÃI</a>
+            <div class="cinema-menu-left">
+                <a href="/Banve/web/tinmoivauudai.html" class="menu-item">TIN MỚI & ƯU ĐÃI</a>
                 <!-- <i class="menu-item"><a href="tinmoivauudai.html"> TIN MỚI & ƯU ĐÃI</a></i> -->
                 <div>Thuê sự kiện</div>
                 <div>Tất cả các giải trí</div>
@@ -108,7 +111,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
     <form  class="cangchinh"  action="/Banve/php/datve_xuly.php" method="POST">
         
 
-     <div><img class="img_booking" src="<?= $movie['poster'] ?>" alt="Ảnh phim <?= $movie['title'] ?>" ></div>
+     <div><img  class="img_booking" src="<?= $movie['poster'] ?>" alt="Ảnh phim <?= $movie['title'] ?>" ></div>
     
      <div>
         <h2>Thông tin đặt vé</h2>
@@ -138,7 +141,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
 
     <p><strong>Tổng tiền (VNĐ):</strong> <span id="totalAmountDisplay">0</span></p> 
 
-    <button type="submit">Đặt vé</button></div>
+    <button class="btn_submit" type="submit">Đặt vé</button></div>
     </form>
     
     <script src="../js/booking.js"></script>
