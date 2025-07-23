@@ -672,3 +672,20 @@ hr {
   color: yellow;
   text-decoration: underline;
 }
+
+#trailerFrame {
+  flex: 1;
+  width: 100%;
+  border: none;
+  margin-top: 200px; /* khoảng cách tránh đè lên header (có thể điều chỉnh theo chiều cao header thực tế) */
+  height: calc(100vh - 200px); /* trừ chiều cao header ra để không bị che */
+  display: block;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  #trailerFrame {
+    margin-top: 260px; /* nếu header dài hơn khi responsive */
+    height: calc(100vh - 260px);
+  }
+}
