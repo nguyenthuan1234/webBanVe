@@ -30,13 +30,16 @@ function toggleSeat(element, seatNumber) {
         selectedSeats.push(seatNumber);
     }
     selectedSeatsInput.value = selectedSeats.join(",");
+
+    // ✅ Tính lại tổng tiền sau khi chọn/huỷ ghế
+    const total = selectedSeats.length * seatPrice;
+    document.getElementById("totalAmount").value = total;
+    document.getElementById("totalAmountDisplay").textContent = total.toLocaleString() + " VNĐ";
+    
 }
 
-const seatPrice = 50000; // Giá mỗi ghế
-const total = selectedSeats.length * seatPrice;
 
-document.getElementById("totalAmount").value = total;
-document.getElementById("totalAmountDisplay").textContent = total.toLocaleString() + " VNĐ";
+const seatPrice = 50000; // Giá mỗi ghế
 
 function checkLoginStatus() {
   fetch("/Banve/php/movies.php", {

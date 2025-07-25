@@ -13,8 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
     if ($result && $result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $movies[] = $row;
-        }
+        $movies[] = [
+        "id" => $row["id"],
+        "title" => $row["title"],
+        "poster" => $row["poster"],
+        "release_date" => $row["release_date"],
+        "trailerLink" => $row["trailer_link"], 
+        "age" => $row["age"],
+        "format" => $row["format"],
+        "time" => $row["time"],
+        "phim_type" => $row["phim_type"]
+        ];
+    }
+
     }
 
     // Lấy role và trạng thái đăng nhập

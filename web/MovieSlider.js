@@ -35,6 +35,7 @@ function fetchMovies() {
 }
 
 function renderMovies(role = "user") {
+  
   const movieList = document.getElementById("movieList");
   const visible = [...movies.slice(activeIndex, activeIndex + itemsPerPage)];
 

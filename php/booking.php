@@ -129,6 +129,20 @@ $user = $stmt_user->get_result()->fetch_assoc();
     <input type="hidden" name="seats" id="selectedSeats">
     <input type="hidden" name="total_amount" id="totalAmount">
 
+    <label>chọn rạp</label>
+    <select name="cinema" id="cinema" required>
+        <option value="">-- Chọn rạp --</option>
+        <option value="CineStar Quốc Thanh">CineStar Quốc Thanh</option>
+        <option value="CineStar Satra Quận 6">CineStar Satra Quận 6</option>
+        <option value="CineStar Hai Bà Trưng">CineStar Hai Bà Trưng</option>
+        <option value="CineStar Sinh Viên Bình Dương">CineStar Sinh Viên Bình Dương</option>
+        <option value="CineStar Huế">CineStar Huế</option>
+        <option value="CineStar Đà Lạt">CineStar Đà Lạt</option>
+        <option value="CineStar Lâm Đồng">CineStar Lâm Đồng</option>
+        <option value="CineStar Mỹ Tho">CineStar Mỹ Tho</option>
+        <option value="CineStar Kiên Giang">CineStar Kiên Giang</option>
+    </select>
+
     <label for="time">Chọn giờ chiếu:</label>
     <select name="time" id="time" required>
         <option value="">-- Chọn giờ --</option>
@@ -137,6 +151,7 @@ $user = $stmt_user->get_result()->fetch_assoc();
         <option value="17:00">17:00</option>
         <option value="20:00">20:00</option>
     </select>
+
 
 
     <p><strong>Tổng tiền (VNĐ):</strong> <span id="totalAmountDisplay">0</span></p> 

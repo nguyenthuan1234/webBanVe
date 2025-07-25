@@ -6,7 +6,7 @@ $stmt = $conn->prepare("
     SELECT 
       m.title, m.poster,m.time AS duration, m.release_date AS date, m.format,
       t.fullname AS user_name, t.Email AS email,
-      d.seat, d.total_amount, d.booking_time
+      d.seat, d.money, d.booking_time,cinema
     FROM datve d
     JOIN movies m ON d.movie_id = m.id
     JOIN thanhvien t ON d.user_id = t.id
@@ -102,9 +102,9 @@ $row = $stmt->get_result()->fetch_assoc();
     <p><strong>Ngày chiếu:</strong> <?= date("d/m/Y", strtotime($row['date'])) ?></p>
     <p><strong>Giờ chiếu:</strong> <?= $row['booking_time'] ?></p>
     <p><strong>Khách hàng:</strong> <?= $row['user_name'] ?></p>
-    <p><strong>Email:</strong> <?= $row['email'] ?></p>
+    <p><strong>Rạp:</strong> <?= $row['cinema'] ?></p>
     <p><strong>Số ghế:</strong> <?= implode(', ', explode(',', $row['seat'])) ?></p>
-    <p><strong>Tổng tiền:</strong> <?= number_format($row['total_amount'], 0, ',', '.') ?> VNĐ</p>
+    <p><strong>Tổng tiền:</strong> <?= number_format($row['money'], 0, ',', '.') ?> VNĐ</p>
     </div>
   </div>
   
