@@ -4,10 +4,11 @@ body {
     background-color: #0B1320;
     font-family: 'Segoe UI', sans-serif;
     color: #ffffff;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; => XÓA đi để không khóa form ở giữa */
+    overflow-y: auto; /* Cho phép cuộn dọc */
 }
 
 .form-container {
@@ -16,6 +17,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     width: 400px;
+    margin: 50px auto; /* Thêm khoảng cách trên/dưới */
 }
 
 .form-container p {
@@ -25,14 +27,17 @@ body {
 
 .form-container input[type="text"],
 .form-container input[type="date"],
-.form-container input[type="file"] {
+.form-container input[type="file"],
+.form-container select,
+.form-container textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 12px;
     background-color: #1e2a47;
     border: 1px solid #2e3a5e;
     border-radius: 6px;
     color: #fff;
+    margin-bottom: 15px;
+    resize: vertical;
 }
 
 .form-container img {
@@ -56,4 +61,10 @@ body {
 
 .form-container button:hover {
     background-color: #b20710;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 500;
 }

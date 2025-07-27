@@ -93,8 +93,9 @@ $row = $stmt->get_result()->fetch_assoc();
     </div>
 
   <div class="ticket-info">
-    <div class="img_poster">'
-      <img class="img_booking" src="<?= $row['poster'] ?>" alt="Ảnh phim <?= $row['title'] ?>" ></div>
+    <div class="ticket-image">
+      <img class="img_booking" src="<?= $row['poster'] ?>" alt="Ảnh phim <?= $row['title'] ?>" >
+    </div>
     <div class="tieude">
       <h2>Thông Tin Vé</h2>
     <p><strong>Tên phim:</strong> <?= $row['title'] ?></p>

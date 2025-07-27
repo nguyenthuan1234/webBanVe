@@ -13,22 +13,25 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
     if ($result && $result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-        $movies[] = [
-        "id" => $row["id"],
-        "title" => $row["title"],
-        "poster" => $row["poster"],
-        "release_date" => $row["release_date"],
-        "trailerLink" => $row["trailer_link"], 
-        "age" => $row["age"],
-        "format" => $row["format"],
-        "time" => $row["time"],
-        "phim_type" => $row["phim_type"]
-        ];
+            $movies[] = [
+                "id" => $row["id"],
+                "title" => $row["title"],
+                "poster" => $row["poster"],
+                "release_date" => $row["release_date"],
+                "trailerLink" => $row["trailer_link"], 
+                "age" => $row["age"],
+                "format" => $row["format"],
+                "time" => $row["time"],
+                "category" => $row["category"],
+                "ticket_price" => $row["ticket_price"],
+                "phim_type" => $row["phim_type"],
+                "actors" => $row["actors"],
+                "director" => $row["director"],
+                "description" => $row["description"]
+            ];
+        }
     }
 
-    }
-
-    // Lấy role và trạng thái đăng nhập
     $role = $_SESSION['role'] ?? 'user';
     $loggedIn = isset($_SESSION['username']);
 
@@ -48,6 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $age = $_POST['age'] ?? '';
     $format = $_POST['format'] ?? '';
     $time = $_POST['time'] ?? '';
+    $category = $_POST['category'] ?? '';
+    $ticketPrice = $_POST['ticketPrice'] ?? 0;
+    $actors = $_POST['actors'] ?? '';
+    $director = $_POST['director'] ?? '';
+    $description = $_POST['description'] ?? '';
     $posterPath = "";
     $isActive = 1;
     $phimType = $_POST['phim'] ?? 'phim1';
@@ -58,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $fileName = basename($_FILES['poster']['name']);
         $targetPath = $uploadDir . $fileName;
 
-        // Kiểm tra loại file hợp lệ
         $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
         $fileType = mime_content_type($_FILES['poster']['tmp_name']);
 
@@ -75,9 +82,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Chưa chọn ảnh hoặc ảnh lỗi!");
     }
 
-    // ✅ Thêm time vào câu lệnh SQL
-    $stmt = $conn->prepare("INSERT INTO movies (title, poster, release_date, trailer_link, age, format, time, is_active, phim_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssssis", $title, $posterPath, $releaseDate, $trailerLink, $age, $format, $time, $isActive, $phimType);
+    // ✅ Thêm actors, director, description vào INSERT
+    $stmt = $conn->prepare("INSERT INTO movies 
+        (title, poster, release_date, trailer_link, age, format, time, category, ticket_price, is_active, phim_type, actors, director, description) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+    $stmt->bind_param("ssssssssdissss", 
+        $title, $posterPath, $releaseDate, $trailerLink, $age, $format, $time, 
+        $category, $ticketPrice, $isActive, $phimType, $actors, $director, $description);
 
     if ($stmt->execute()) {
         $stmt->close();

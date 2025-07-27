@@ -1,3 +1,4 @@
+/* ========== NỀN VÀ FONT CHUNG ========== */
 body {
   margin: 0;
   padding: 0;
@@ -43,22 +44,6 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.header-container .lg-react {
-  font-size: 80px;
-  font-weight: bold;
-  color: white;
-  animation: spin 5s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-.header-container .logo {
-  height: 30px;
 }
 
 .header-container .btn-yellow {
@@ -114,10 +99,6 @@ body {
   padding: 4px;
   font-size: 14px;
   color: black;
-}
-
-.header-container .header-search .search-icon {
-  color: #999;
 }
 
 .header-container .header-right {
@@ -295,57 +276,91 @@ body {
   text-decoration: underline;
 }
 
-/* ========== NỘI DUNG VÉ ========== */
+/* ========== THÔNG TIN VÉ ========== */
 .ticket-info {
-  text-align: center;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
   background-color: #111827;
-  padding: 2rem;
-  margin: 15% ;
-  margin-top: 13%;
+  padding: 2.5rem;
+  margin: 13% auto 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  width: 85%;
+  max-width: 1000px;
+  color: white;
+}
+
+.ticket-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.img_booking {
+  width: 100%;
+  max-width: 100%;
   border-radius: 12px;
-  max-width: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-.ticket-info {
-    margin-left: 23%;
-
-    display: flex;
-    background-color: #111827;
-    padding: 2rem;
-    margin-top: 13%;
-    border-radius: 12px;
-    max-width: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+.tieude {
+  flex: 2;
+  font-size: 16px;
+  color: #f3f4f6;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
+.tieude h2 {
+  color: #60a5fa;
+  font-size: 24px;
+  margin-bottom: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.5rem;
+}
 
+.tieude p {
+  margin: 0;
+  line-height: 1.6;
+}
 
+.tieude strong {
+  color: #facc15;
+  font-weight: 600;
+}
+
+/* ========== RESPONSIVE CHO MOBILE ========== */
+@media (max-width: 768px) {
+  .ticket-info {
+    flex-direction: column;
+    padding: 1.5rem;
+    margin-top: 25%;
+  }
+
+  .ticket-image {
+    margin-bottom: 1.5rem;
+  }
+
+  .img_booking {
+    max-width: 80%;
+  }
+
+  .tieude {
+    padding-left: 0;
+  }
+
+  .tieude h2 {
+    text-align: center;
+  }
+}
+
+/* ========== HR GẠCH NGANG ========== */
 hr {
   margin-left: 9%;
   width: 80.5%;
-}
-.img_poster{
-    height: 100%;
-    display: list-item;
-    width: 70%;
-}
-
-img.img_booking {
-    margin-top: -4%;
-    height: 95%;
-    display: list-item;
-    width: 100%;
-}
-
-form.ticket-info{
-    margin-top: 13%;
-    
-}
-.tieude {
-    text-align: center;
-    font-size: 125%;
-    color: #609efa;
-    margin-bottom: 1rem;
 }

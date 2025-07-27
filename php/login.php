@@ -23,6 +23,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['Email'];
             $_SESSION['role'] = $user['role'];
+            $_SESSION['user_id'] = $user['id'];
             header("Location:/Banve/web/trangchu.html");
             exit();
         } else {

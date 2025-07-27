@@ -58,10 +58,9 @@ function renderMovies(role = "user") {
           <h4>${movie.title}</h4>
         </div>
         <div class="buttons">
-          <a href="/Banve/web/trailer.html?link=${encodeURIComponent(movie.trailerLink)}" class="trailer-btn" >
+          <a href="/Banve/web/trailer.html?id=${movie.id}&link=${encodeURIComponent(movie.trailerLink)}" class="trailer-btn">
             <i class="fa fa-play-circle"></i> Xem Trailer
           </a>
-
 
          <a class="book-btn" href="/Banve/php/booking.php?id=${movie.id}&title=${encodeURIComponent(movie.title)}&duration=${movie.time}&date=${encodeURIComponent(movie.release_date)}&format=${movie.format}">
              Đặt Vé
@@ -197,7 +196,7 @@ function renderMovies1(role = "user") {
         <h4>${movie.title}</h4>
       </div>
       <div class="buttons">
-        <a href="/Banve/web/trailer.html?link=${encodeURIComponent(movie.trailerLink)}" class="trailer-btn" >
+        <a href="/Banve/web/trailer.html?id=${movie.id}&link=${encodeURIComponent(movie.trailerLink)}" class="trailer-btn">
             <i class="fa fa-play-circle"></i> Xem Trailer
           </a>
         <a class="book-btn" href="/Banve/php/booking.php?id=${movie.id}&title=${encodeURIComponent(movie.title)}&duration=${movie.time}&date=${encodeURIComponent(movie.release_date)}&format=${movie.format}">
@@ -230,7 +229,7 @@ function renderMovies2(role = "user") {
         <h4>${movie.title}</h4>
       </div>
       <div class="buttons">
-        <a href="/Banve/web/trailer.html?link=${encodeURIComponent(movie.trailerLink)}" class="trailer-btn" >
+        <a href="/Banve/web/trailer.html?id=${movie.id}&link=${encodeURIComponent(movie.trailerLink)}" class="trailer-btn">
             <i class="fa fa-play-circle"></i> Xem Trailer
           </a>
         <a class="book-btn" href="/Banve/php/booking.php?id=${movie.id}&title=${encodeURIComponent(movie.title)}&duration=${movie.time}&date=${encodeURIComponent(movie.release_date)}&format=${movie.format}">

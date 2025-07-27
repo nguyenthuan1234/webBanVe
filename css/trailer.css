@@ -312,21 +312,132 @@ hr {
       z-index: 10;
     }
 
-    .trailer-center {
-  display: block;
-  margin: 220px auto 40px auto; /* canh giữa ngang và cách top khỏi header */
-  width: 80%;
-  height: calc(100vh - 260px); /* để phù hợp với phần header cố định */
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    /* ===== PHẦN TRAILER TITLE ===== */
+#trailerTitle {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin: 160px 0 20px; /* cách xa header fixed */
+  color: #FFEB3B;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Responsive: căn giữa cho mobile */
+
+/* ===== VIDEO TRAILER ===== */
+iframe#trailerFrame.trailer-center {
+  display: block;
+  margin: 0 auto 30px auto;
+  width: 80%;
+  max-width: 960px;
+  height: 500px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+  background-color: black;
+}
+
+
+/* ===== THÔNG TIN TRAILER ===== */
+.trailer-info {
+  text-align: center;
+  margin: 20px auto 60px;
+  width: 80%;
+  max-width: 960px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.trailer-info h2 {
+  font-size: 28px;
+  color: #FFEB3B;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px black;
+}
+
+.trailer-info p {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+
+/* ===== FOOTER ===== */
+.footer-container {
+  background: #111827;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-container .btn-yellow,
+.footer-container .btn-purple {
+  margin: 10px 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-position 0.5s ease, color 0.5s ease;
+}
+
+/* Giữ lại hiệu ứng gradient cũ */
+.footer-container .btn-yellow {
+  background: linear-gradient(90deg, #FFEB3B 50%, #a34fe7 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  color: black;
+  border: none;
+}
+
+.footer-container .btn-yellow:hover {
+  background-position: right center;
+  color: white;
+}
+
+.footer-container .btn-purple {
+  background: linear-gradient(90deg, #a34fe7 50%, #4CAF50 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  color: white;
+  border: none;
+}
+
+.footer-container .btn-purple:hover {
+  background-position: right center;
+  color: black;
+}
+
+
+/* ===== RESPONSIVE CHO MOBILE ===== */
 @media screen and (max-width: 768px) {
-  .trailer-center {
-    margin-top: 260px;
-    height: calc(100vh - 280px);
+  #trailerTitle {
+    font-size: 24px;
+    margin-top: 180px;
+  }
+
+  iframe#trailerFrame.trailer-center {
     width: 95%;
+    height: 250px;
+  }
+
+  .trailer-info h2 {
+    font-size: 20px;
+  }
+
+  .trailer-info p {
+    font-size: 14px;
   }
 }
+
+.trailer-info .info-line {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #eee;
+}
+
+.trailer-info .info-line strong {
+  color: #FFEB3B;
+}
+
