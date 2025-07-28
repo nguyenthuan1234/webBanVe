@@ -24,12 +24,14 @@
                 <button class="btn-purple">🍿 ĐẶT BẮP NƯỚC</button>
             </div>
 
-            <div class="header-search">
-                <input type="text" placeholder="Tìm phim, rạp" />
+            <div class="header-search" style="position:relative;">
+                <input type="text" id="searchBox" placeholder="Tìm phim, rạp" />
                 <button class="search-button" style="background: white; border: none;">
-                    <i class="fas fa-search" ></i>
+                    <i class="fas fa-search"></i>
                 </button>
+                <div id="results" style="position:absolute; background:white; color:black; width: 300px; max-height: 300px; overflow-y:auto; display:none; z-index:1000;"></div>
             </div>
+
 
            <div class="header-right">
                 <div class="login">

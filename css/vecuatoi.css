@@ -1,75 +1,352 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 20px; /* Giữ khoảng cách nội dung nếu cần */
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #0B1320; /* Ưu tiên nền chính tối */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+hr{
+    margin-left: 9%;
+    width: 80.5%;
 }
 
+.header-container {
+  margin-top: 0;
+  font-size: 25px;
+  background-color: #0B1320;
+  color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  text-align: center;
+  z-index: 11;
+}
+
+.header-container .header-top {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px 0;
+  margin: 20px 10% 26px;
+  width: auto;
+}
+
+.header-container .header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-container .btn-yellow {
+  background: linear-gradient(90deg, #FFEB3B 50%, #a34fe7 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  color: black;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-position 0.5s ease, color 0.5s ease;
+}
+
+.header-container .btn-yellow:hover {
+  background-position: right center;
+  color: white;
+}
+
+.header-container .btn-purple {
+  background: linear-gradient(90deg, #a34fe7 50%, #4CAF50 50%);
+  background-size: 200% 100%;
+  background-position: left center;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-position 0.5s ease, color 0.5s ease;
+}
+
+.header-container .btn-purple:hover {
+  background-position: right center;
+  color: black;
+}
+
+.header-container .header-search {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 4px 12px;
+  margin-left: 185px;
+  width: 300px;
+}
+
+.header-container .header-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 4px;
+  font-size: 14px;
+  color: black;
+}
+
+.header-container .header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-container .login {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header-container .login:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+.header-container .language {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.header-container .language .star {
+  color: red;
+  font-size: 18px;
+}
+
+.header-container .language .vn:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+.header-container .header-bottom {
+  max-width: 90%;
+  display: flex;
+  gap: 30px;
+  padding: 10px 40px;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container .ci-sh {
+  width: 20%;
+  margin-left: 10%;
+  gap: 20px;
+  display: flex;
+}
+
+.header-container .show-schedule {
+  color: white;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.header-container .show-schedule:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+/* ========== MENU CHUNG ========== */
+.cinema-menu-left {
+  margin-right: 10%;
+  gap: 33px;
+  display: flex;
+}
+
+.cinema-menu-left div {
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+
+.cinema-menu-left div:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+.cinema-dropdown {
+  gap: 20px;
+  position: relative;
+  display: flex;
+  margin-left: 12%;
+}
+
+.cinema-dropdown .cinema-title {
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cinema-dropdown .cinema-title:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+.cinema-dropdown .cinema-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0B1320;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.cinema-dropdown .cinema-menu div {
+  color: white;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cinema-dropdown .cinema-menu div:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+.cinema-dropdown:hover .cinema-menu {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px 40px;
+}
+
+/* ========== MENU ITEM ========== */
+.menu-item {
+  color: white;
+  text-decoration: none;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.menu-item:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+  text-shadow: 0 0 2px black;
+}
+
+.menu-item a {
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.menu-item a:hover {
+  color: #FFEB3B;
+  text-decoration: underline;
+}
+
+
+
+
+/* ======= Vé của tôi - Hiển thị danh sách vé ======= */
 .heading {
     text-align: center;
-    color: #333;
-    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 140px 0 30px;
+    color: #FFEB3B; /* Màu vàng nổi bật */
+    text-shadow: 0 0 10px #a34fe7;
 }
 
 .ticket-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
+    padding: 0 20px 60px;
+    max-width: 80%;        /* 🔸 Giới hạn chiều rộng toàn bộ danh sách vé */
+    margin: 0 auto;        /* 🔸 Căn giữa */
 }
 
 .ticket-card {
-    background: white;
-    width: 320px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    width: 280px;          /* 🔸 Nhỏ hơn so với trước đó (320px) */
+    background: #1C2536;
+    border: 1px solid #333;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .ticket-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(255, 235, 59, 0.3);
 }
 
 .ticket-poster {
     width: 100%;
-    height: 180px;
+    height: 190px;
     object-fit: cover;
 }
 
 .ticket-details {
-    padding: 15px;
+    padding: 16px;
+    color: #e0e0e0;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .ticket-details h3 {
     margin: 0 0 10px;
-    color: #2196f3;
+    font-size: 20px;
+    color: #FFEB3B;
 }
 
-.ticket-details p {
-    margin: 4px 0;
-    color: #444;
-    font-size: 14px;
+.ticket-details p strong {
+    color: #90caf9;
 }
 
 .view-details {
     display: inline-block;
-    margin-top: 10px;
-    padding: 6px 12px;
-    background-color: #2196f3;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background-color: #a34fe7;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .view-details:hover {
-    background-color: #1976d2;
+    background-color: #8c3ddc;
 }
 
 .no-ticket {
     text-align: center;
-    color: #999;
-    font-size: 18px;
-    margin-top: 50px;
+    font-size: 20px;
+    color: #ccc;
+    margin-top: 180px;
 }

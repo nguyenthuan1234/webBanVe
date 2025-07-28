@@ -313,6 +313,45 @@ function handleNext2() {
 }
 
 
+const searchBox = document.getElementById("searchBox");
+const results = document.getElementById("results");
+
+searchBox.addEventListener("input", function () {
+  const keyword = this.value.trim();
+  if (keyword === "") {
+    results.innerHTML = "";
+    results.style.display = "none";
+    return;
+  }
+
+  fetch(`/Banve/php/search.php?q=${encodeURIComponent(keyword)}`)
+    .then((res) => res.json())
+    .then((data) => {
+      results.innerHTML = "";
+      if (data.length === 0) {
+        results.innerHTML = "<div style='padding:8px'>Không tìm thấy phim.</div>";
+      } else {
+        data.forEach((movie) => {
+          results.innerHTML += `
+            <div style="display: flex; align-items: center; gap: 10px; padding: 8px; border-bottom: 1px solid #ccc; cursor: pointer;" 
+                onclick='window.location.href="/Banve/web/trailer.html?id=${movie.id}&link=${encodeURIComponent(movie.trailer_link)}"'>
+              <img src="${movie.poster}" alt="${movie.title}" style="width: 50px; height: 70px; object-fit: cover; border-radius: 4px;">
+              <div>
+                <strong>${movie.title}</strong><br>
+                <small>${movie.time} phút</small>
+              </div>
+            </div>`;
+        });
+      }
+      results.style.display = "block";
+    })
+    .catch((err) => {
+      results.innerHTML = "<div style='color:red;'>Lỗi tìm kiếm.</div>";
+      results.style.display = "block";
+    });
+});
+
+
 
 
 fetchMovies1();
